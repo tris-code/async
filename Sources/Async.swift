@@ -8,6 +8,8 @@
  * See CONTRIBUTORS.txt for the list of the project authors
  */
 
+import Foundation
+
 public typealias AsyncTask = (Void) -> Void
 
 public protocol Async {
@@ -18,4 +20,5 @@ public protocol Async {
 
 public protocol AsyncLoop {
     func run()
+    func run(until: Date)
 }
