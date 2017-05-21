@@ -13,6 +13,10 @@ import PackageDescription
 let package = Package(
     name: "Async",
     dependencies: [
-        .Package(url: "https://github.com/tris-foundation/platform.git", majorVersion: 0)
+        .Package(
+            url: "https://github.com/tris-foundation/platform.git",
+            majorVersion: 0,
+            minor: 3
+        )
     ]
 )
