@@ -4,10 +4,11 @@ An abstraction over coroutine-based io poller and asynchronous task.
 
 This design allows us to easily swap our fiber system to [another one](https://github.com/tris-foundation/tarantool) provided the host application.
 
-Also provides a fallback to blocking sockets and spawns a [dispatch](https://github.com/tris-foundation/async-dispatch) task instead of a fiber if you can't use cooperative multitasking for some reason.
+Also provides a fallback to blocking sockets and spawns a [dispatch](https://github.com/tris-foundation/async-dispatch) task instead of a fiber<br>
+if you can't use cooperative multitasking for some reason.
 
 ## Package.swift
 
 ```swift
-.Package(url: "https://github.com/tris-foundation/async.git", majorVersion: 0, minor: 3)
+.package(url: "https://github.com/tris-foundation/async.git", from: "0.4.0")
 ```

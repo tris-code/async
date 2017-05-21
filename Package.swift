@@ -1,3 +1,4 @@
+// swift-tools-version:4.0
 /*
  * Copyright 2017 Tris Foundation and the project authors
  *
@@ -12,11 +13,16 @@ import PackageDescription
 
 let package = Package(
     name: "Async",
+    products: [
+        .library(name: "Async", targets: ["Async"])
+    ],
     dependencies: [
-        .Package(
+        .package(
             url: "https://github.com/tris-foundation/platform.git",
-            majorVersion: 0,
-            minor: 3
+            from: "0.4.0"
         )
+    ],
+    targets: [
+        .target(name: "Async", dependencies: ["Platform"])
     ]
 )
