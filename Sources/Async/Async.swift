@@ -39,3 +39,13 @@ public protocol AsyncLoop {
     func run()
     func run(until: Date)
 }
+
+extension Async {
+    public func syncTask<T>(
+        qos: DispatchQoS.QoSClass = .background,
+        deadline: Date = Date.distantFuture,
+        task: @escaping () throws -> T
+    ) throws -> T{
+        return try syncTask(qos: qos, deadline: deadline, task: task)
+    }
+}
