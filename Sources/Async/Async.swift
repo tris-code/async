@@ -8,9 +8,15 @@
  * See CONTRIBUTORS.txt for the list of the project authors
  */
 
+import Platform
+
 import struct Foundation.Date
 import struct Dispatch.DispatchQoS
 import class Dispatch.DispatchQueue
+
+public enum IOEvent {
+    case read, write
+}
 
 public typealias AsyncTask = () -> Void
 
@@ -21,7 +27,6 @@ public enum AsyncError: Error {
 
 public protocol Async {
     var loop: AsyncLoop { get }
-    var awaiter: IOAwaiter? { get }
 
     func task(_ closure: @escaping AsyncTask) -> Void
 
@@ -33,6 +38,8 @@ public protocol Async {
     ) throws -> T
 
     func sleep(until deadline: Date)
+
+    func wait(for descriptor: Descriptor, event: IOEvent, deadline: Date) throws
 
     func testCancel() throws
 }
