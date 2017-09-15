@@ -47,6 +47,7 @@ public protocol Async {
 public protocol AsyncLoop {
     func run()
     func run(until: Date)
+    func terminate()
 }
 
 extension Async {
