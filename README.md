@@ -10,5 +10,5 @@ if you can't use cooperative multitasking for some reason.
 ## Package.swift
 
 ```swift
-.package(url: "https://github.com/tris-foundation/async.git", from: "0.4.0")
+.package(url: "https://github.com/tris-foundation/async.git", .branch("master"))
 ```
