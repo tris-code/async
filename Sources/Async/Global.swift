@@ -10,7 +10,7 @@
 
 import Platform
 
-private var initialized = false
+var initialized = false
 @_versioned var _async: Async = AsyncInitializer()
 
 public var async: Async {
