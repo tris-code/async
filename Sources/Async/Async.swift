@@ -8,9 +8,9 @@
  * See CONTRIBUTORS.txt for the list of the project authors
  */
 
+import Time
 import Platform
 
-import struct Foundation.Date
 import struct Dispatch.DispatchQoS
 import class Dispatch.DispatchQueue
 
@@ -33,20 +33,20 @@ public protocol Async {
     func syncTask<T>(
         onQueue queue: DispatchQueue,
         qos: DispatchQoS,
-        deadline: Date,
+        deadline: Time,
         task: @escaping () throws -> T
     ) throws -> T
 
-    func sleep(until deadline: Date)
+    func sleep(until deadline: Time)
 
-    func wait(for descriptor: Descriptor, event: IOEvent, deadline: Date) throws
+    func wait(for descriptor: Descriptor, event: IOEvent, deadline: Time) throws
 
     func testCancel() throws
 }
 
 public protocol AsyncLoop {
     func run()
-    func run(until: Date)
+    func run(until deadline: Time)
     func terminate()
 }
 
@@ -55,7 +55,7 @@ extension Async {
         return try syncTask(
             onQueue: DispatchQueue.global(),
             qos: .background,
-            deadline: Date.distantFuture,
+            deadline: Time.distantFuture,
             task: task)
     }
 }

@@ -23,12 +23,16 @@ let package = Package(
             .branch("master")
         ),
         .package(
+            url: "https://github.com/tris-foundation/time.git",
+            .branch("master")
+        ),
+        .package(
             url: "https://github.com/tris-foundation/test.git",
             .branch("master")
         )
     ],
     targets: [
-        .target(name: "Async", dependencies: ["Platform"]),
+        .target(name: "Async", dependencies: ["Platform", "Time"]),
         .target(name: "AsyncDispatch", dependencies: ["Async"]),
         .testTarget(
             name: "AsyncDispatchTests",

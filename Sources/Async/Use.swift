@@ -38,8 +38,9 @@ extension Async {
     }
 }
 
+import Time
 import Platform
-import struct Foundation.Date
+
 import struct Dispatch.DispatchQoS
 import class Dispatch.DispatchQueue
 
@@ -61,20 +62,20 @@ struct AsyncInitializer: Async {
     func syncTask<T>(
         onQueue queue: DispatchQueue,
         qos: DispatchQoS,
-        deadline: Date,
+        deadline: Time,
         task: @escaping () throws -> T) throws -> T
     {
         die()
     }
 
-    func sleep(until deadline: Date) {
+    func sleep(until deadline: Time) {
         die()
     }
 
     func wait(
         for descriptor: Descriptor,
         event: IOEvent,
-        deadline: Date) throws
+        deadline: Time) throws
     {
         die()
     }
