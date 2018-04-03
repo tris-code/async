@@ -14,28 +14,21 @@ import PackageDescription
 let package = Package(
     name: "Async",
     products: [
-        .library(name: "Async", targets: ["Async"]),
-        .library(name: "AsyncDispatch", targets: ["AsyncDispatch"])
+        .library(name: "Async", targets: ["Async"])
     ],
     dependencies: [
         .package(
             url: "https://github.com/tris-foundation/platform.git",
-            .branch("master")
-        ),
+            .branch("master")),
         .package(
             url: "https://github.com/tris-foundation/time.git",
-            .branch("master")
-        ),
+            .branch("master")),
         .package(
             url: "https://github.com/tris-foundation/test.git",
-            .branch("master")
-        )
+            .branch("master"))
     ],
     targets: [
         .target(name: "Async", dependencies: ["Platform", "Time"]),
-        .target(name: "AsyncDispatch", dependencies: ["Async"]),
-        .testTarget(
-            name: "AsyncDispatchTests",
-            dependencies: ["AsyncDispatch", "Test"])
+        .testTarget(name: "AsyncTests", dependencies: ["Test"])
     ]
 )

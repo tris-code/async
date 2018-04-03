@@ -8,11 +8,13 @@
  * See CONTRIBUTORS.txt for the list of the project authors
  */
 
-import Async
-import Dispatch
+import Test
+import Time
 
-public struct Dispatch: Asynchronous {
-    public static var async: Async {
-        return AsyncDispatch()
+@testable import Async
+
+class AsyncDispatchTests: TestCase {
+    func testTask() {
+
     }
 }
