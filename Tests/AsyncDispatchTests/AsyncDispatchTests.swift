@@ -72,8 +72,6 @@ class AsyncDispatchTests: TestCase {
 
         async.task {
             assertNotNil(try? async.testCancel())
-            Thread.current.cancel()
-            assertNil(try? async.testCancel())
         }
 
         async.task {
