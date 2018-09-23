@@ -73,6 +73,10 @@ struct AsyncInitializer: Async {
     }
     #endif
 
+    func yield() {
+        die()
+    }
+
     func sleep(until deadline: Time) {
         die()
     }

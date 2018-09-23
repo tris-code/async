@@ -42,6 +42,8 @@ public protocol Async {
     ) throws -> T
     #endif
 
+    func yield()
+    
     func sleep(until deadline: Time)
 
     func wait(for descriptor: Descriptor, event: IOEvent, deadline: Time) throws
