@@ -69,6 +69,23 @@ extension Async {
 }
 #endif
 
+// MARK: main
+
+extension Async {
+    public typealias MainTask = () throws -> Void
+
+    public func main(_ body: @escaping MainTask) -> Void {
+        task {
+            do {
+                try body()
+            } catch {
+                print(error)
+                exit(1)
+            }
+        }
+    }
+}
+
 // FIXME: Find a better way
 
 extension Async {
