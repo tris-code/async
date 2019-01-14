@@ -1,10 +1,9 @@
 import Test
-import Time
 
 @testable import Async
 
-class AsyncDispatchTests: TestCase {
-    func testTask() {
-
+class AsyncTests: TestCase {
+    func testAsync() {
+        assertTrue(async is AsyncInitializer)
     }
 }

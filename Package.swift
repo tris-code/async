@@ -19,6 +19,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "Async", dependencies: ["Platform", "Time"]),
-        .testTarget(name: "AsyncTests", dependencies: ["Test"])
+        .testTarget(name: "AsyncTests", dependencies: ["Test", "Async"])
     ]
 )
