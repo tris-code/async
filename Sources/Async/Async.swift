@@ -74,13 +74,3 @@ extension Async {
         }
     }
 }
-
-// FIXME: Find a better way
-
-extension Async {
-    public func release<Instance>(_ instance: Instance)
-        where Instance : AnyObject
-    {
-        Unmanaged.passUnretained(instance).release()
-    }
-}
