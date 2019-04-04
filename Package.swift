@@ -8,13 +8,13 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/tris-foundation/platform.git",
+            url: "https://github.com/tris-code/platform.git",
             .branch("master")),
         .package(
-            url: "https://github.com/tris-foundation/time.git",
+            url: "https://github.com/tris-code/time.git",
             .branch("master")),
         .package(
-            url: "https://github.com/tris-foundation/test.git",
+            url: "https://github.com/tris-code/test.git",
             .branch("master"))
     ],
     targets: [
