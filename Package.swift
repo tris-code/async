@@ -7,9 +7,9 @@ let package = Package(
         .library(name: "Async", targets: ["Async"])
     ],
     dependencies: [
-        .package(path: "../Platform"),
-        .package(path: "../Time"),
-        .package(path: "../Test")
+        .package(path: "../platform"),
+        .package(path: "../time"),
+        .package(path: "../test")
     ],
     targets: [
         .target(name: "Async", dependencies: ["Platform", "Time"]),
